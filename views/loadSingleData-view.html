@@ -1,0 +1,64 @@
+<div class="alignButton">
+	<div class="container-fluid" ng-init="loadsingledata.loadAllSoccerDatas()">
+		<div class="row">
+		  	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		  		<h1>{{loadsingledata.soccerHeading}}</h1>
+		  	</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		  		<h5>{{loadsingledata.soccerSeriesName}}</h5>
+		  	</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h5>{{loadsingledata.soccerDay}}</h5>
+			</div>
+		</div>
+		<br/>
+		<div class="matchDetails">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		  		<h3>
+		  			<a href="#/teamstatitics/{{loadsingledata.team1code}}">
+		  			{{loadsingledata.team1}}</a>
+		  		</h3>
+		  	</div>
+		  	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		  		<h1>{{loadsingledata.Goal1}}</h1>
+		  	</div>
+		  	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		  		<h3>
+		  			<a href="#/teamstatitics/{{loadsingledata.team2code}}">
+		  			{{loadsingledata.team2}}</a>
+		  		</h3>
+		  	</div>
+		  	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		  		<h1>{{loadsingledata.Goal2}}</h1>
+		  	</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				Held on {{loadsingledata.matchDate}}
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div ng-if= "loadsingledata.Goal1>loadsingledata.Goal2">
+					{{loadsingledata.team1}} won the match by {{loadsingledata.Goal1}} - {{loadsingledata.Goal2}}
+				</div>
+				<div ng-if= "loadsingledata.Goal1<loadsingledata.Goal2">
+					{{loadsingledata.team2}} won the match by {{loadsingledata.Goal2}} - {{loadsingledata.Goal1}}
+				</div>
+				<div ng-if= "loadsingledata.Goal1==loadsingledata.Goal2">
+					{{loadsingledata.team1}} {{loadsingledata.team2}} Match drawn  {{loadsingledata.Goal1}} - {{loadsingledata.Goal2}}
+				</div>
+		  	</div>
+		</div>
+		</div>
+	</div>
+</div>

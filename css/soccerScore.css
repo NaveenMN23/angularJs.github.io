@@ -1,0 +1,32 @@
+.alignButton{
+	text-align: center;
+}
+.scoreboard{
+	border: 1px solid black; 
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.knowmore{
+	font-size: 14px;
+}
+.searchtextalign{
+	font-size: 16px;
+}
+.searchtextaligncolumn{
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.matchDetails{
+	border: 1px solid #000;
+	padding: 5%;
+}
+.alignText{
+	text-align: Left;
+	line-height: 40pt;
+	border: 1px solid #000;
+}
+.textBold{	
+	font-weight: 800;
+}

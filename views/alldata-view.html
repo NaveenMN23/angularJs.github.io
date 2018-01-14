@@ -1,0 +1,62 @@
+<div class="container-fluid alignButton">
+	<div class="row" ng-init="loadalldatas.loadAllSoccerDatas()">
+	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	  	<h1>{{loadalldatas.soccerHeading.name}}</h1>
+	  	<br/>
+	  	<div class="row searchtextalign">
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			Home Team:
+	  		</div>
+		  	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+		  		<input type='text' ng-model='search.team1.name' ng-change='search.team2.name' placeholder="Search a team name like : Manchester " />
+		  	</div>
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			Away Team:
+	  		</div>
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			<input type='text' ng-model='search.team2.name' placeholder="Search a team name like : Manchester " />
+	  		</div>
+	  	</div>
+	  	<div class="row searchtextalign">
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			Match Date:
+	  		</div>
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			<input type='text' ng-model='search.date' placeholder="Search a Date like : 2017-07-07 " />
+	  		</div>
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			Home Team Goal:
+	  		</div>
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			<input type='text' ng-model='search.score1' placeholder="Search a Goal : 1 " />
+	  		</div>
+	  	</div>
+	  	<div class="row searchtextalign">
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			Away Team Goal:
+	  		</div>
+	  		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 searchtextaligncolumn">
+	  			<input type='text' ng-model='search.score2' placeholder="Search a Goal : 1 " />
+	  		</div>
+	  	</div>
+	  	<br/>
+	  	<div ng-repeat = "loadMatchName in loadalldatas.soccerHeading.rounds">
+	  		<h3>{{loadMatchName.name}}</h3>
+	  		<div class="scoreboard" ng-repeat = "loadMatchDetails in loadMatchName.matches | filter:search">
+	  			<p>
+	  				<b>
+	  					<a href="#/teamstatitics/{{loadMatchDetails.team1.code}}">{{loadMatchDetails.team1.name}}</a>
+	  				</b> - {{loadMatchDetails.score1}} vs {{loadMatchDetails.score2}} - 
+	  				<b>
+	  					<a href="#/teamstatitics/{{loadMatchDetails.team2.code}}">{{loadMatchDetails.team2.name}}</a>
+	  				</b> on 
+	  				<span>
+	  					{{loadMatchDetails.date}} 
+	  				</span> 
+	  				<a class="knowmore" href='#/knowmore/{{loadMatchDetails.team1.code}}/{{loadMatchDetails.team2.code}}/{{loadMatchDetails.date}}/{{loadalldatas.allsoccerInfo}}'>Click here to Know more</a>
+	  			</p>  
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+</div>
